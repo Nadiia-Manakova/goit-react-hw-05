@@ -16,7 +16,6 @@ const fetchMovies = async (endpoint, params = {}) => {
         ...params,
       },
     });
-
     return response.data;
   } catch (error) {
     console.error("Ошибка при выполнении запроса к TMDB API:", error);
@@ -32,6 +31,13 @@ export const getTrendingMovies = async (page = 1) => {
   return fetchMovies("/trending/movie/day", { page });
 };
 
+// export const getMoviesById = async (movieId) => {
+//   return fetchMovies(`/movies/:movieId`);
+// };
+
 export const getMoviesById = async (movieId) => {
+  if (!movieId) {
+    throw new Error("Movie ID is required");
+  }
   return fetchMovies(`/movie/${movieId}`);
 };
