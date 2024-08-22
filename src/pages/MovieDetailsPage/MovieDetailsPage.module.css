@@ -1,0 +1,17 @@
+.poster {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.generalInfo {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.title {
+  margin-top: 0;
+}
