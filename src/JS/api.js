@@ -31,3 +31,7 @@ export const searchMovies = async (query, page = 1) => {
 export const getTrendingMovies = async (page = 1) => {
   return fetchMovies("/trending/movie/day", { page });
 };
+
+export const getMoviesById = async (movieId) => {
+  return fetchMovies(`/movie/${movieId}`);
+};

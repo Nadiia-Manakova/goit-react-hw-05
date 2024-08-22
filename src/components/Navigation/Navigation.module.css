@@ -1,13 +1,29 @@
 .active {
-  width: 150px;
+  width: 60px;
   display: inline-block;
   /* background-color: #e8eaec; */
 
   background: #5463cb;
   border: none;
   box-shadow: 5px 5px 15px 0px rgba(13, 39, 80, 0.16), -5px -5px 15px 0px #fff;
-  border-radius: 10px;
-  padding: 10px 20px;
+  border-radius: 5px;
+  padding: 5px 10px;
   color: white;
+  text-align: center;
+
   font-size: 18px;
+}
+
+.notActive {
+  color: grey;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+.nav {
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }

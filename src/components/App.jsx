@@ -11,7 +11,7 @@ import css from "./App.module.css";
 
 export const App = () => {
   return (
-    <div className={css.container}>
+    <div className={css.section}>
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />

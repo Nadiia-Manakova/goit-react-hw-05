@@ -5,7 +5,7 @@ import css from "./Navigation.module.css";
 
 export const Navigation = () => {
   const buildLinkClass = ({ isActive }) => {
-    return clsx(css.link, isActive && css.active);
+    return clsx(css.link, isActive ? css.active : css.notActive);
   };
   return (
     <nav className={css.nav}>

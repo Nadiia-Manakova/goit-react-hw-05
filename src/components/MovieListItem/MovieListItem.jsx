@@ -2,15 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import css from "./MovieListItem.module.css";
 
-export const MovieListItem = ({ id, title }) => {
-  const movieTitleSlug = encodeURIComponent(
-    title.toLowerCase().replace(/\s+/g, "-")
-  );
+export const MovieListItem = ({ name, image }) => {
   return (
-    <li className={css.item}>
-      <Link to={`/movies/${id}/${movieTitleSlug}`} className={css.link}>
-        {title}
-      </Link>
-    </li>
+    <div className={css.imageWrapper}>
+      <img src={image} alt={name} className={css.image} />
+      <h3 className={css.title}>{name}</h3>
+    </div>
   );
 };

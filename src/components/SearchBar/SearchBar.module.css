@@ -1,0 +1,41 @@
+.form {
+  max-width: 1280px;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  background-color: #e8eaec;
+  border: none;
+  box-shadow: -5px -5px 15px 0px rgba(255, 255, 255, 0.64) inset,
+    5px 5px 5px 0px rgba(13, 39, 80, 0.15) inset;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.formField {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+
+  color: grey;
+  font-size: 18px;
+}
+
+.formField:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: lightgrey;
+}
+
+.icons {
+  color: grey;
+  width: 24px;
+  height: 24px;
+}
