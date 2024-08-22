@@ -6,11 +6,12 @@ import { MovieCast } from "../../components/MovieCast/MovieCast";
 import { MovieReviews } from "../../components/MovieReviews/MovieReviews";
 
 import css from "./MovieDetailsPage.module.css";
+import { SiH3 } from "react-icons/si";
 
 export const MovieDetailsPage = () => {
   const { id } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? "/movies";
+  const backLinkHref = location.state?.from || "/movies";
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -55,7 +56,7 @@ export const MovieDetailsPage = () => {
         <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
       </div>
       <div>
-        <h4>Additional information</h4>
+        <h3>Additional information</h3>
         <ul>
           <li>
             <MovieCast movieId={id} />
