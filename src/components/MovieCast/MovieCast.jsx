@@ -31,7 +31,7 @@ export const MovieCast = () => {
             src={
               actor.profile_path
                 ? `${BASE_IMAGE_URL}${IMAGE_SIZE}${actor.profile_path}`
-                : "/public/images/blank-actor.jpg"
+                : "/images/blank-profile-male.jpg"
             }
             alt={actor.name}
             className={css.actorImage}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { GoArrowRight } from "react-icons/go";
 import { useParams, useLocation, Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
@@ -13,7 +13,7 @@ import { SiH3 } from "react-icons/si";
 export const MovieDetailsPage = () => {
   const { id } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state?.from || "/";
+  const backLinkRef = useRef(location.state?.from || "/");
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export const MovieDetailsPage = () => {
 
   return (
     <main className={css.container}>
-      <BackLink to={backLinkHref}>Back to movies</BackLink>
+      <BackLink to={backLinkRef.current}>Back to movies</BackLink>
       <ul className={css.info}>
         <li className={css.generalInfo}>
           <img

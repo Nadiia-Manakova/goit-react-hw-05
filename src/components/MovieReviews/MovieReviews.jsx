@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieReviews } from "../../JS/api";
 import css from "./MovieReviews.module.css";
@@ -6,7 +6,7 @@ import css from "./MovieReviews.module.css";
 export const MovieReviews = () => {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
-
+  const backLinkHref = useRef(location.state ?? "/");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
