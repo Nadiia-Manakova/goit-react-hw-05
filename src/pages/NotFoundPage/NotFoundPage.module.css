@@ -1,0 +1,29 @@
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+.message {
+  font-size: 32px;
+}
+
+.backHomeLink {
+  background: #5463cb;
+  border: none;
+  box-shadow: 5px 5px 15px 0px rgba(13, 39, 80, 0.16), -5px -5px 15px 0px #fff;
+  border-radius: 5px;
+  padding: 5px 20px;
+  color: white;
+  text-align: center;
+
+  font-size: 18px;
+
+  position: relative;
+}
+
+.backHomeLink:hover {
+  color: white;
+  background: #6861ca;
+}

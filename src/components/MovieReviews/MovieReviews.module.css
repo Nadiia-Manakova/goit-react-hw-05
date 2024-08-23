@@ -1,0 +1,14 @@
+.movieReviewItem:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.reviewAuthor {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.reviewContent {
+  font-size: 14px;
+}

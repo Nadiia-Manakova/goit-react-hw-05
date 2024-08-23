@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { GoArrowRight } from "react-icons/go";
+import { useParams, useLocation, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { BackLink } from "../../components/BackLink/BackLink";
 import { getMoviesById } from "../../JS/api";
 import { MovieCast } from "../../components/MovieCast/MovieCast";
@@ -11,7 +13,7 @@ import { SiH3 } from "react-icons/si";
 export const MovieDetailsPage = () => {
   const { id } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state?.from || "/movies";
+  const backLinkHref = location.state?.from || "/";
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -33,7 +35,11 @@ export const MovieDetailsPage = () => {
   }, [id]);
 
   if (!movie) {
-    return <p>Loading...</p>;
+    return (
+      <main className={css.container}>
+        <p>Loading...</p>
+      </main>
+    );
   }
 
   const ORIGINAL_IMAGE_URL = "https://image.tmdb.org/t/p/";
@@ -56,24 +62,36 @@ export const MovieDetailsPage = () => {
           <div className={css.details}>
             <h2 className={css.title}>{movie.title}</h2>
             <p>User Score: {(movie.vote_average * 10).toFixed(2)}%</p>
-            <h3>Overview</h3>
+            <h3 className={css.titleDetails}>Overview</h3>
             <p>{movie.overview}</p>
-            <h3>Genres</h3>
+            <h3 className={css.titleDetails}>Genres</h3>
             <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
           </div>
         </li>
         <li className={css.additionallInfo}>
-          <h3>Additional information</h3>
-          <ul>
-            <li>
-              <MovieCast movieId={id} />
-            </li>
-            <li>
-              <MovieReviews movieId={id} />
-            </li>
-          </ul>
+          <h3 className={css.titleDetails}>Additional information</h3>
+
+          <Link
+            to={`/movies/${id}/cast`}
+            className={`${css.additionallInfoLink} ${
+              location.pathname.includes("/cast") ? css.activeLink : ""
+            }`}
+          >
+            <GoArrowRight className={css.additionallInfoIcon} />
+            <p>Cast</p>
+          </Link>
+          <Link
+            to={`/movies/${id}/reviews`}
+            className={`${css.additionallInfoLink} ${
+              location.pathname.includes("/reviews") ? css.activeLink : ""
+            }`}
+          >
+            <GoArrowRight className={css.additionallInfoIcon} />
+            <p>Reviews</p>
+          </Link>
         </li>
       </ul>
+      <Outlet />
     </main>
   );
 };

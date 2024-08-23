@@ -15,3 +15,35 @@
 .title {
   margin-top: 0;
 }
+
+.titleDetails {
+  margin-top: 50px;
+}
+
+.additionallInfo {
+  border-top: solid 0.75px lightgrey;
+  border-bottom: solid 0.75px lightgrey;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+}
+.additionallInfoIcon {
+  size: 24px;
+}
+
+.additionallInfoLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.additionallInfo .titleDetails {
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.activeLink,
+.activeLink > p {
+  font-weight: bold;
+  color: #5463cb;
+}

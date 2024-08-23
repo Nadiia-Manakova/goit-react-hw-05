@@ -41,3 +41,39 @@ export const getMoviesById = async (movieId) => {
   }
   return fetchMovies(`/movie/${movieId}`);
 };
+
+export const getMovieCast = async (movieId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/movie/${movieId}/credits`, {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+      },
+      params: {
+        language: "en-US",
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка при получении актёрского состава:", error);
+    throw error;
+  }
+};
+
+export const getMovieReviews = async (movieId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/movie/${movieId}/reviews`, {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+      },
+      params: {
+        language: "en-US",
+      },
+    });
+
+    return response.data.results;
+  } catch (error) {
+    console.error("Ошибка при получении отзывов:", error);
+    throw error;
+  }
+};

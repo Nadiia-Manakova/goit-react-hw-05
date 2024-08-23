@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getTrendingMovies } from "../../JS/api";
-
-import { Navigation } from "../../components/Navigation/Navigation";
 import { MovieList } from "../../components/MovieList/MovieList";
 
 import css from "./HomePage.module.css";

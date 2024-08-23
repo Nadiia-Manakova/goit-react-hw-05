@@ -13,7 +13,9 @@ import css from "./App.module.css";
 export const App = () => {
   return (
     <div className={css.section}>
-      <Navigation />
+      <header>
+        <Navigation />
+      </header>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />

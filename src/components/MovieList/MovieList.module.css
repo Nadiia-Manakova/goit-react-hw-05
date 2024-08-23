@@ -8,6 +8,11 @@
 }
 
 .movieListItem {
-  flex: 1 0 15%; /* Пример ширины элемента; измените по необходимости */
+  flex: 1 0 18%;
   box-sizing: border-box;
 }
+
+/* .movieList::after {
+  content: "";
+  flex: 200 0 0.25%;
+} */

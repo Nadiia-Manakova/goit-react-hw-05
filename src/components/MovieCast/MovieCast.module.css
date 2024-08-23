@@ -1,0 +1,31 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.castList::after {
+  content: "";
+  flex: auto;
+}
+
+.actorImage {
+  width: 100%;
+  min-height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movieCastItem {
+  width: 100px;
+}
+
+.actorName {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.actorCharacter {
+  font-size: 14px;
+}
