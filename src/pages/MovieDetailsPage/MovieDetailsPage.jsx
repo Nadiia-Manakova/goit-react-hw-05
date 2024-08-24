@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Suspense } from "react";
 import { GoArrowRight } from "react-icons/go";
 import { useParams, useLocation, Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { BackLink } from "../../components/BackLink/BackLink";
 import { getMoviesById } from "../../JS/api";
-import { MovieCast } from "../../components/MovieCast/MovieCast";
-import { MovieReviews } from "../../components/MovieReviews/MovieReviews";
+import MovieCast from "../../components/MovieCast/MovieCast";
+import MovieReviews from "../../components/MovieReviews/MovieReviews";
 
 import css from "./MovieDetailsPage.module.css";
 import { SiH3 } from "react-icons/si";
 
-export const MovieDetailsPage = () => {
+export default function MovieDetailsPage() {
   const { id } = useParams();
   const location = useLocation();
   const backLinkRef = useRef(location.state?.from || "/");
@@ -91,7 +92,9 @@ export const MovieDetailsPage = () => {
           </Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<div>Loading subpage...</div>}>
+        <Outlet />
+      </Suspense>
     </main>
   );
-};
+}

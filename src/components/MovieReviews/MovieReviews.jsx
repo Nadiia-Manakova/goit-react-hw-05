@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getMovieReviews } from "../../JS/api";
 import css from "./MovieReviews.module.css";
 
-export const MovieReviews = () => {
+export default function MovieReviews() {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
   const backLinkHref = useRef(location.state ?? "/");
@@ -52,4 +52,4 @@ export const MovieReviews = () => {
       )}
     </ul>
   );
-};
+}

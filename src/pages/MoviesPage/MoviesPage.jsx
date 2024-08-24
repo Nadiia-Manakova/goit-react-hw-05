@@ -4,7 +4,7 @@ import { searchMovies } from "../../JS/api";
 import { MovieList } from "../../components/MovieList/MovieList";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 
-export const MoviesPage = () => {
+export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get("name") ?? "";
@@ -33,4 +33,4 @@ export const MoviesPage = () => {
       <MovieList movies={movies} />
     </main>
   );
-};
+}

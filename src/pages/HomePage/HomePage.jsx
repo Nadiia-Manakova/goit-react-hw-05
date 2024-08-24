@@ -4,7 +4,7 @@ import { MovieList } from "../../components/MovieList/MovieList";
 
 import css from "./HomePage.module.css";
 
-export const HomePage = () => {
+export default function HomePage() {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     const fetchTrendingMovies = async () => {
@@ -21,4 +21,4 @@ export const HomePage = () => {
       <MovieList movies={movies} />
     </main>
   );
-};
+}

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import css from "./NotFoundPage.module.css";
 
-export const NotFoundPage = () => {
+export default function NotFoundPage() {
   return (
     <main>
       <section>
@@ -12,4 +12,4 @@ export const NotFoundPage = () => {
       </section>
     </main>
   );
-};
+}
